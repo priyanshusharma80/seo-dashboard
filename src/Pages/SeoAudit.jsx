@@ -60,13 +60,15 @@ const SeoAudit = () => {
         
         const finalURL = normalizeUrl(URL);
 
+        const API_KEY = 'AIzaSyATZ07liC-wrB80rNdpnQGoJrwIrojPmQU';
+
 
         // using codetabs api
 
         try {
             const [res, performanceData] = await Promise.all([
                 axios.get(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(finalURL)}`),
-                axios.get(`https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${finalURL}&key=${process.env.REACT_APP_PSI_API_KEY}&strategy=desktop`)
+                axios.get(`https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${finalURL}&key=${API_KEY}&strategy=desktop`)
             ]);
 
             const parser = new DOMParser();
