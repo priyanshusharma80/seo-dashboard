@@ -11,7 +11,7 @@ export default function SERPPreview() {
     const maxDescriptionLength = 160;
 
     const formatURL = (rawUrl) => {
-        if (!rawUrl) return "www.example.com/page";
+        if (!rawUrl) return "";
 
         try {
             let urlObj = new URL(url.startsWith("http") ? url : `https://${url}`);
@@ -127,7 +127,7 @@ export default function SERPPreview() {
                     }`}
             >
                 <div className="text-green-700 dark:text-green-400 text-sm">
-                    {formatURL(url) || "www.example.com/page"}
+                    {formatURL(url) || "example.com › solution › templates"}
                 </div>
                 <div className="text-blue-700 dark:text-blue-400 text-lg leading-tight">
                     {title || "Example Title - This is how your title will look on Google"}
